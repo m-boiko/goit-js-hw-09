@@ -1,14 +1,14 @@
 const startBtn = document.querySelector('button[data-start]');
 const stopBtn = document.querySelector('button[data-stop]');
 
+let timerId = null;
+
 startBtn.addEventListener('click', onStart);
 stopBtn.addEventListener('click', onStop);
 
-let timerId = null;
-
 function onStart() {
-  startBtn.disablet = true;
-  stopBtn.disablet = false;
+  startBtn.disabled = true;
+  stopBtn.disabled = false;
 
   timerId = setInterval(() => {
     let color = getRandomHexColor();
@@ -17,8 +17,8 @@ function onStart() {
 }
 
 function onStop() {
-  startBtn.disable = false;
-  stopBtn.disablet = true;
+  startBtn.disabled = false;
+  stopBtn.disabled = true;
   clearInterval(timerId);
 }
 
